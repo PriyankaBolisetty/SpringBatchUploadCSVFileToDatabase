@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<head th:replace="common/header :: navbar"/>
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+				<div class="panel-title text-center">
+					<h1 class="title">Upload a list</h1>
+					<hr />
+				</div>
+			</div>
+			<div class="main-login main-center">
+				<form class="form-horizontal" method="post" th:action="@{/import/file/uploadToDB}" enctype="multipart/form-data">
+
+					<div class="form-group ">
+						<p>
+							<label for="fileupload" class="cols-sm-2 control-label">Convert
+								Excel to CSV:</label> <br /> <br />
+								<!-- <input type="file" th:value="${attachment.file}" name="file" id="fileupload"  size="40" value="fileupload" required="required"/>-->
+								<input type="file" name="file" id="fileupload"  size="40" value="fileupload" required="required"/>
+						</p>
+					</div>
+					<div class="form-group ">
+						<button type="submit"
+							class="btn btn-primary btn-lg btn-block login-button">Convert
+						</button>
+					</div>
+					<hr />
+					<div class="form-group ">
+						<a class="btn btn-info btn-lg btn-block login-button"
+							th:href="@{/}">Cancel</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

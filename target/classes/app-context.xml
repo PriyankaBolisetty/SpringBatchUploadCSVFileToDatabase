@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:ldap="http://www.springframework.org/schema/ldap"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd
+           http://www.springframework.org/schema/ldap 
+           http://www.springframework.org/schema/ldap/spring-ldap.xsd">
+
+	<context:annotation-config />
+
+	<context:component-scan base-package="springbatch_example" />
+
+	<context:property-placeholder location="classpath:/jdbc.properties" />
+
+	<!--  <ldap:context-source username="cn=Administrator"
+		password="secret" url="${ldap.url}" base="${ldap.base}"
+		anonymous-read-only="true">
+	</ldap:context-source>
+
+	<ldap:ldap-template />-->
+
+	<!-- stored job-metadata in database 
+	<bean id="jobRepository"
+		class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="databaseType" value="mysql" />
+	</bean>
+
+	  <bean id="jobLauncher"
+		class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<property name="jobRepository" ref="jobRepository" />
+	</bean>-->
+
+</beans>
